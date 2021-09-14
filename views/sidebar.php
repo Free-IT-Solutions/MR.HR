@@ -20,7 +20,7 @@
           </a>
           <div id="subPages2" class="<?php echo ($HR=='profile') ? 'collapse in' : 'collapse'; ?>">
             <ul class="nav">
-              <li><a href="employee.php" class="<?php echo ($HR=='employee') ? '' : ''; ?>"><i class="fa fa-eercast"></i> <span>قائمة البنوك</span></a></li>
+              <li><a href="bank.php" class="<?php echo ($HR=='employee') ? '' : ''; ?>"><i class="fa fa-eercast"></i> <span>قائمة البنوك</span></a></li>
               <li><a href="addBank.php" class="<?php echo ($HR=='bank') ? 'active' : ''; ?>"><i class="fa fa-eercast"></i> <span>إضافة بنك</span></a></li>
             </ul>
           </div>

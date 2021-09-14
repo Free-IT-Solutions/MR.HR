@@ -6,12 +6,10 @@
 
 	$bankOb = new bank();
 
-	if(isset($_POST['add_bank']))
-	{
-
-		 $bankOb->add_bank($_POST['bankName']);    
-	
-	}
+    if(isset($_POST['edit_bank']))
+    {
+        $bankOb->edit_bank($_POST['bankName'],$_GET['id']);
+    }
 
 ?>
 		<!-- MAIN -->
@@ -22,24 +20,29 @@
 					<h3 class="page-title">البنوك</h3>
                     <div class="panel">
                         <div class="panel-heading">
-                            <h3 class="panel-title">اضافة بنك جديد</h3>
+                            <h3 class="panel-title">تعديل معلومات البنك :</h3>
                         </div>
 
                         <div class="panel-body">
-                            <!-- اضافة بنك جديد -->
+                            <!-- تعديل بنك  -->
+                            		<?php  
+                                        $banks = $bankOb->display_oneBank($_GET['id']);
+                                        foreach($banks as $row){	
+									?>
                             <form method="post">
                                 <div class="row">
                                     <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
                                         <label for="bankName">اسم البنك :</label>
-                                        <input type="text" id="bankName" name="bankName" class="form-control" placeholder="اسم البنك" required>
+                                        <input value="<?php echo $row->BankName;?>" type="text" id="bankName" name="bankName" class="form-control" placeholder="اسم البنك" required>
                                         <br>
                                     </div>
                                 </div>
 								<div class="margin-top-30 text-center">
-								<button id="add_bank" name="add_bank"  type="submit" class="btn btn-success update-pro">اضافة</button>
+								<button id="edit_bank" name="edit_bank"  type="submit" class="btn btn-success update-pro">تعديل</button>
 								</div>
                             </form>
-                            <!-- نهاية اضافة بنك جديد -->
+                            <!-- نهاية تعديل بنك  -->
+                            <?php  } ?>
                         </div>
                     </div>
 				</div>

@@ -28,9 +28,6 @@
     <div class="main-content">
     <div class="container-fluid">
         <h3 class="page-title">تعديل معلومات الموظف
-            <?php
-             echo showDate($_POST['birthDate']);
-            ?>
         </h3>
         <div class="panel">
             <div class="panel-body">
@@ -153,7 +150,7 @@
                             </div>
                         </form>
                     
-										        <?php  } ?>
+						<?php  } ?>
                     
                     
                     
